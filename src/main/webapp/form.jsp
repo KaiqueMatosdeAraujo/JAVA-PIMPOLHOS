@@ -55,42 +55,39 @@
         
         
         <div class="col-9 conteudo">
-            <form action="ServletCRUD" method="post">
+            <form action="ServletPimpolhos" method="post">
 
 
 
-                <c:choose>
-                    <c:when test="${ user == null }">
-                
-                    <div class="row justify-content-center">
-                     <h1>Atualizar</h1>
-                     
-                     
-                         <div class="mb-3">
-                        <label for="exampleInput" class="form-label">Nome:</label>
-                        <input class="form-control" type="text" name="name" required/>
-                         </div>
-                        
-                        
-                        <div class="mb-3">
-                        <label for="exampleInput" class="form-label">Email:</label>
-                        <input class="form-control" type="text" name="email"/>
-                         </div>
-                         
-                         
-                        <div class="mb-3">
-                        <label for="exampleInput" class="form-label">País:</label>
-                        <input  class="form-control" type="text" name="pais"/>
-                        </div>
-                        
-                        <button class="btn btn-secondary col-2"  style="margin-bottom: 10px;" type="submit" name="option" value="insert">Salvar</button>
-                        </div>
-                        </div>
-                        
-                     </c:when>
-                    </c:choose>
+         <c:choose>
+			<c:when test="${ usuario == null }">
+			<div class="container mt-5 col-6" style="outline: 1px solid #d5d5d5; border-radius: 11px; padding: 16px;">
+				<label style="margin-right: 17px;">Nome:</label><input type="text" name="nome" required/><br>
+				<label style="margin-right: 23px;">CPF:</label><input type="text" name="cpf"/><br>
+				<label style="margin-right: 32px;">Email:</label><input type="text" name="email"/><br>
+			    <label style="margin-right: 32px;">Senha:</label><input type="text" name="senha"/><br>
+			    
+			    
+				<button style="margin-top: 13px;" class="btn btn-primary" type="submit" name="option" value="insert">Salvar</button>
+				</div>
+			</c:when>
+			<c:otherwise>
+			<div class="container mt-5 col-6" style="outline: 1px solid #d5d5d5; border-radius: 11px; padding: 16px;">
+				<input type="hidden" name="id" value="${usuario.id}"/><br>
+				<label style="margin-right: 17px;">Nome:</label>
+				<input type="text" name="name" value="${usuario.nome}" required/><br>
+				<label style="margin-right: 23px;">cpf:</label>
+				<input type="text" name="name" value="${usuario.cpf}" required/><br>
+				<label style="margin-right: 23px;">Email:</label>
+				<input type="text" name="email" value="${usuario.email}"/><br>
+				<label style="margin-right: 32px;">Senha:</label>
+				<input type="text" name="pais" value="${usuario.senha}"/><br>
+			
+				<button class="btn btn-primary" type="submit" name="option" value="update">Atualizar</button>
+			</div>
+			</c:otherwise>
+		</c:choose>
             </form>
         </div>
-
 </body>
 </html>
