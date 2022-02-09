@@ -20,12 +20,12 @@ public class DAO {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("insert into cliente nome_cliente,cpf,email,senha   values (?, ? , ?, ?)");
+			PreparedStatement p = con.prepareStatement("insert into cliente (nome_cliente,cpf,data_nasc,email,senha) values (?, ? ,?,?, ?)");
 			p.setString(1, usuario.getNome());
 		    p.setString(2, usuario.getCpf());
 			//p.setDate(3,(Date) usuario.getNascimento());
-			p.setString(3, usuario.getEmail());
-		    p.setString(4, usuario.getSenha());
+			p.setString(4, usuario.getEmail());
+		    p.setString(5, usuario.getSenha());
 			
 			System.out.println(p);
 			p.executeUpdate();
@@ -48,14 +48,14 @@ public class DAO {
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
-				Integer id = r.getInt("id");
+				Integer id = r.getInt("cod_cliente");
 				String nome = r.getString("nome_cliente");
 				String cpf = r.getString("cpf");
-			//	Date data = r.getDate("data_nasc");
+			     Date data = r.getDate("data_nasc");
 				String email = r.getString("email");
 				String senha = r.getString("senha");
-				Usuario usuario = new Usuario(nome,cpf,email,senha);
-				usuario.setId(id);
+				Usuario usuario = new Usuario(nome,cpf,data,email,senha);
+				usuario.setCod_cliente(id);;
 				lista.add(usuario);
 			}
 			r.close();
@@ -73,7 +73,7 @@ public class DAO {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("delete from cliente where id = ?");
+			PreparedStatement p = con.prepareStatement("delete from cliente where cod_cliente = ?");
 			p.setInt(1, id);
 			System.out.println(p);
 			p.executeUpdate();
@@ -92,13 +92,13 @@ public class DAO {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("update cliente set nome_cliente =? , cpf = ?, email = ?, senha = ?  where id = ?");
+			PreparedStatement p = con.prepareStatement("update cliente set nome_cliente =? , cpf =?, data_nasc= ?,email =?, senha =?  where cod_cliente = ? ");
 			p.setString(1, usuario.getNome());
 			p.setString(2, usuario.getCpf());
-			//p.setDate(3, (Date) usuario.getNascimento());
+		 //  p.setDate(3, (Date) usuario.getNascimento());
 			p.setString(3, usuario.getEmail());
 			p.setString(4, usuario.getSenha());
-			p.setInt(5, usuario.getId());
+			p.setInt(5, usuario.getCod_cliente());
 			System.out.println(p);
 			p.executeUpdate();
 			System.out.println("Comando executado");
@@ -114,20 +114,20 @@ public class DAO {
 		Connection con = c.getConnection();
 		Usuario u = null;
 		try {
-			PreparedStatement p = con.prepareStatement("select * from cliente where id = ?");
+			PreparedStatement p = con.prepareStatement("select * from cliente where cod_cliente = ?");
 			p.setInt(1, id);
 			ResultSet r = p.executeQuery();			
 			
 			
 			while (r.next()) {
-				Integer id1 = r.getInt("id");
+				Integer id1 = r.getInt("cod_cliente");
 				String nome = r.getString("nome_cliente");
 				String cpf = r.getString("cpf");
-			//	Date data = r.getDate("data_nasc");
+		        Date data = r.getDate("data_nasc");
 				String email = r.getString("email");
 				String senha = r.getString("senha");
-				u = new Usuario (nome,cpf,email,senha);
-				u.setId(id1);
+				u = new Usuario(nome, cpf, data, email, senha);
+				u.setCod_cliente(id1);
 			}
 			r.close();
 			p.close();

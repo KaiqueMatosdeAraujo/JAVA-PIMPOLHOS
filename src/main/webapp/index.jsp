@@ -117,8 +117,8 @@
                             
                             <form action="ServletPimpolhos" method="post">
                                 <td>
-                                    <c:out value="${usuario.id}"/>
-                                    <input type="hidden" name="id" value="${usuario.id}"/>
+                                    <c:out value="${usuario.cod_cliente}"/>
+                                    <input type="hidden" name="cod_cliente" value="${usuario.cod_cliente}"/>
                                 </td>
                                 <td><c:out value="${usuario.nome}"/></td>
                                 <td><c:out value="${usuario.cpf}"/></td>

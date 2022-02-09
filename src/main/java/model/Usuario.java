@@ -4,31 +4,31 @@ import java.util.Date;
 
 public class Usuario {
 
-	private Integer id;
+	private Integer cod_cliente;
 	private String  nome;
 	private String  cpf;
-	//private Date  nascimento;
+	private Date  nascimento;
 	private String  email;
 	private String  senha;
 	
 	
-	public Usuario(String nome, String cpf, String email, String senha) {
+	public Usuario(String nome, String cpf,Date nascimento ,String email, String senha) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
-		//this.nascimento = nascimento;
+		this.nascimento = nascimento;
 		this.email = email;
 		this.senha = senha;
 	}
 
 
-	public Integer getId() {
-		return id;
+	public Integer getCod_cliente() {
+		return cod_cliente;
 	}
 
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setCod_cliente(Integer id) {
+		this.cod_cliente = id;
 	}
 
 
@@ -52,14 +52,14 @@ public class Usuario {
 	}
 
 
-	//public Date getNascimento() {
-		//return nascimento;
-	//}
+	public Date getNascimento() {
+		return nascimento;
+	}
 
 
-	//public void setNascimento(Date nascimento) {
-		//this.nascimento = nascimento;
-	//}
+	public void setNascimento(Date nascimento) {
+		this.nascimento = nascimento;
+	}
 
 
 	public String getEmail() {
@@ -84,7 +84,7 @@ public class Usuario {
 	
 	
 	public String toString() {
-		return this.id + " - " + this.nome + " - " + this.cpf  + " - " + this.email + " - " + this.senha;
+		return this.cod_cliente+ " - " + this.nome + " - " + this.cpf + " - " + this.email + " - " + this.senha;
 	}
 	
 }

@@ -78,7 +78,7 @@ public class ServletPimpolhos extends HttpServlet {
 	}
 	
 	private void showUpdateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		Integer id = Integer.parseInt(request.getParameter("id"));
+		Integer id = Integer.parseInt(request.getParameter("cod_cliente"));
 		Usuario usuario = this.dao.recuperarUsuario(id);
 		request.setAttribute("usuario", usuario);
 		request.getRequestDispatcher("form.jsp").forward(request, response);
@@ -87,13 +87,13 @@ public class ServletPimpolhos extends HttpServlet {
 	private void insertUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String nomeBack = request.getParameter("nome");
 		String cpfBack = request.getParameter("cpf");
-		//String nascimentoBack = Date.parse( request.getParameter("nascimento"));
+		//String nascimentoBack = request.getParameter("nascimento");
 		String emailBack = request.getParameter("email");
 		String senhaBack = request.getParameter("senha");
 		
 		if ((nomeBack != null) && (emailBack != null)&&(cpfBack != null) ) {
 			if (!nomeBack.equals("")){
-				Usuario user1 = new Usuario (nomeBack, cpfBack, emailBack,senhaBack);
+				Usuario user1 = new Usuario (nomeBack, cpfBack,null, emailBack,senhaBack);
 				this.dao.inserir(user1);
 	}
 		}
@@ -107,7 +107,7 @@ public class ServletPimpolhos extends HttpServlet {
 	}
 	
 	private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String idBack = request.getParameter("id");
+		String idBack = request.getParameter("cod_cliente");
 		if (idBack != null) {
 			Integer id = Integer.parseInt(idBack);
 			this.dao.deletar(id);
@@ -119,15 +119,15 @@ public class ServletPimpolhos extends HttpServlet {
 		
 		String nomeBack = request.getParameter("nome");
 		String cpfBack = request.getParameter("cpf");
-		//Date nascimentoBack = request.getParameter("nascimento");
+		//String nascimentoBack = request.getParameter("nascimento");
 		String emailBack = request.getParameter("email");
 		String senhaBack = request.getParameter("senha");
-		String idBack = request.getParameter("id");
+		String idBack = request.getParameter("cod_cliente");
 		if ((senhaBack != null) && (cpfBack != null) && (nomeBack != null) && (emailBack != null) && (idBack != null)) {
 			if (!nomeBack.equals("")){
 				Integer id = Integer.parseInt(idBack);
-				Usuario usuario = new Usuario (nomeBack, cpfBack, emailBack,senhaBack);
-				usuario.setId(id);
+				Usuario usuario = new Usuario (nomeBack, cpfBack,null,emailBack,senhaBack);
+				usuario.setCod_cliente(id);
 				this.dao.atualizar(usuario);
 			}
 		}

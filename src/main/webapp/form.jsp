@@ -73,7 +73,7 @@
 			</c:when>
 			<c:otherwise>
 			<div class="container mt-5 col-6" style="outline: 1px solid #d5d5d5; border-radius: 11px; padding: 16px;">
-				<input type="hidden" name="id" value="${usuario.id}"/><br>
+				<input type="hidden" name="cod_cliente" value="${usuario.cod_cliente}"/><br>
 				<label style="margin-right: 17px;">Nome:</label>
 				<input type="text" name="name" value="${usuario.nome}" required/><br>
 				<label style="margin-right: 23px;">cpf:</label>
