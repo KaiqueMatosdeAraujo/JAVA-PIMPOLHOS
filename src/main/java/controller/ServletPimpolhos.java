@@ -119,7 +119,7 @@ public class ServletPimpolhos extends HttpServlet {
 		
 		String nomeBack = request.getParameter("nome");
 		String cpfBack = request.getParameter("cpf");
-		//String nascimentoBack = request.getParameter("nascimento");
+		String nascimentoBack = request.getParameter("nascimento");
 		String emailBack = request.getParameter("email");
 		String senhaBack = request.getParameter("senha");
 		String idBack = request.getParameter("cod_cliente");

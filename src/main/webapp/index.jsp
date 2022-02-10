@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
-<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -23,8 +23,10 @@
         </div>
     </nav>
 
+
+
     <div class="row bodyRow" style="justify-content:space-around;">
-        <div class="col-2 navLateral">
+        <div class="col-xl-2 navLateral">
             <ul class="navbar-nav menuLateralTab">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Clientes</a>
@@ -52,56 +54,17 @@
         </div>
         
         
-         <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Pimpolhos</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-            </div>
-        </div>
-    </nav>
-
-    <div class="row bodyRow" style="justify-content:space-around;">
-        <div class="col-2 navLateral">
-            <ul class="navbar-nav menuLateralTab">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Clientes</a>
-                </li>
-                <hr>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categorias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fornecedores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pedidos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Marcas</a>
-                </li>
-            </ul>
-        </div>
+        <form action="ServletPimpolhos" method="post">
+		<button class="btn btn-secondary col-2" style=" margin-bottom: 35px;font-weight: bold;" type="submit"  name="option" value="insertForm"> Adicionar usuário</button>
+		
+	</form>
         
-        
-        
-        
-        <div class="col-9 conteudo">
+        <div class="col-xl-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Cod_Cliente</th>
+                        <th>#</th>
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Data de Nascimento</th>
@@ -112,6 +75,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                
+                
                     <c:forEach var="usuario" items="${listUser}">
                         <tr>
                             
@@ -120,14 +85,17 @@
                                     <c:out value="${usuario.cod_cliente}"/>
                                     <input type="hidden" name="cod_cliente" value="${usuario.cod_cliente}"/>
                                 </td>
-                                <td><c:out value="${usuario.nome}"/></td>
-                                <td><c:out value="${usuario.cpf}"/></td>
-                                <td><c:out value="${usuario.nascimento}"/></td>
-                                <td><c:out value="${usuario.email}"/></td>
-                                <td><c:out value="${usuario.senha}"/></td>
-                               <td>
-								<button type="submit" name="option" value="delete">Deletar</button>
-								<button type="submit" name="option" value="updateForm">Atualizar</button>
+                                <td class="col-2"><c:out value="${usuario.nome}"/></td>
+                                <td class="col-1"><c:out value="${usuario.cpf}"/></td>
+                                <td class="col-1"><c:out value="${usuario.nascimento}"/></td>
+                                <td class="col-2"><c:out value="${usuario.email}"/></td>
+                                <td class="col-1"><c:out value="${usuario.senha}"/></td>
+                               <td class="col-4">
+                               
+                               <div class="row apoio">
+								<button class="btn btnApoio col-5" type="submit" name="option" value="delete">Deletar</button>
+								<button class="btn btnApoio col-5" type="submit" name="option" value="updateForm">Atualizar</button>
+							    </div>
 							  </td>
 
                                

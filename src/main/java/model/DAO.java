@@ -20,10 +20,10 @@ public class DAO {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("insert into cliente (nome_cliente,cpf,data_nasc,email,senha) values (?, ? ,?,?, ?)");
+			PreparedStatement p = con.prepareStatement("insert into cliente (nome_cliente, cpf, data_nasc,email,senha) VALUES (?,?,?,?,?)");
 			p.setString(1, usuario.getNome());
 		    p.setString(2, usuario.getCpf());
-			//p.setDate(3,(Date) usuario.getNascimento());
+			p.setDate(3,(Date) usuario.getNascimento());
 			p.setString(4, usuario.getEmail());
 		    p.setString(5, usuario.getSenha());
 			
@@ -73,6 +73,12 @@ public class DAO {
 		Connection con = c.getConnection();
 		
 		try {
+			PreparedStatement a = con.prepareStatement("delete from endereco_cliente where cod_cliente = ?");
+		    a.setInt(1, id);
+		    System.out.println(a);
+		    a.executeUpdate();
+		    System.out.println("Comando executado");
+		    
 			PreparedStatement p = con.prepareStatement("delete from cliente where cod_cliente = ?");
 			p.setInt(1, id);
 			System.out.println(p);
@@ -86,19 +92,19 @@ public class DAO {
 		}
 	}
 	
-	//public void updateUser(Integer id, String newName) {
+	
 	public void atualizar(Usuario usuario) {
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("update cliente set nome_cliente =? , cpf =?, data_nasc= ?,email =?, senha =?  where cod_cliente = ? ");
+			PreparedStatement p = con.prepareStatement("update cliente set nome_cliente = ? , cpf = ?, data_nasc = ?,email = ?, senha = ?  where cod_cliente = ? ");
 			p.setString(1, usuario.getNome());
 			p.setString(2, usuario.getCpf());
-		 //  p.setDate(3, (Date) usuario.getNascimento());
-			p.setString(3, usuario.getEmail());
-			p.setString(4, usuario.getSenha());
-			p.setInt(5, usuario.getCod_cliente());
+		    p.setDate(3, (Date) usuario.getNascimento());
+			p.setString(4, usuario.getEmail());
+			p.setString(5, usuario.getSenha());
+			p.setInt(6, usuario.getCod_cliente());
 			System.out.println(p);
 			p.executeUpdate();
 			System.out.println("Comando executado");

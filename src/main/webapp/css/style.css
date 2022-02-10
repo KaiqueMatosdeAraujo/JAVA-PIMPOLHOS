@@ -1,0 +1,98 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+}
+
+.navLateral {
+	margin-top: 10px;
+	background-color: #E6889A;
+	border-radius: 8px;
+}
+
+hr {
+	color: rgb(255, 255, 255);
+}
+
+ul.menuLateralTab  li a {
+	font-weight: bold;
+	color: white;
+}
+
+.navbar {
+	margin-bottom: 50px;
+	background-color: #E6889A;
+}
+
+.navbar-light a.navbar-brand {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.navbar-light a.navbar-brand:hover {
+	color: #ffffff;
+}
+
+.navbar-light a.navbar-brand:visited {
+	color: #ffffff;
+}
+
+table {
+	background-color: rgb(182, 182, 182);
+	Color: rgb(0, 0, 0);
+}
+
+.table {
+	margin-bottom: 0px;
+}
+
+.table-responsive {
+	border-radius: 8px;
+}
+
+tbody {
+	background-color: rgb(226, 226, 226);
+}
+
+.row .conteudo {
+	background-color: rgb(226, 226, 226);
+	border: 3px solid rgb(226, 222, 222);
+	border-radius: 9px;
+	height: max-content;
+	padding-right: 0;
+	padding-left: 0;
+	
+}
+div.row.apoio{
+	
+	justify-content: space-evenly;
+	
+	margin-left:0px;
+	margin-right:0px;
+}
+
+
+button.btn.btnApoio{
+display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(255 255 255);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: rgb(255 148 148);
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+
