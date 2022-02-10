@@ -54,11 +54,7 @@
         </div>
         
         
-        <form action="ServletPimpolhos" method="post">
-		<button class="btn btn-secondary col-2" style=" margin-bottom: 35px;font-weight: bold;" type="submit"  name="option" value="insertForm"> Adicionar usuário</button>
-		
-	</form>
-        
+      
         <div class="col-xl-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover">
@@ -70,7 +66,7 @@
                         <th>Data de Nascimento</th>
                         <th>Email</th>
                         <th>Senha</th>
-                        <th>Acoes</th>     
+                             
                       
                     </tr>
                 </thead>
@@ -81,7 +77,7 @@
                         <tr>
                             
                             <form action="ServletPimpolhos" method="post">
-                                <td>
+                                <td class="col-1">
                                     <c:out value="${usuario.cod_cliente}"/>
                                     <input type="hidden" name="cod_cliente" value="${usuario.cod_cliente}"/>
                                 </td>
@@ -90,13 +86,8 @@
                                 <td class="col-1"><c:out value="${usuario.nascimento}"/></td>
                                 <td class="col-2"><c:out value="${usuario.email}"/></td>
                                 <td class="col-1"><c:out value="${usuario.senha}"/></td>
-                               <td class="col-4">
-                               
-                               <div class="row apoio">
-								<button class="btn btnApoio col-5" type="submit" name="option" value="delete">Deletar</button>
-								<button class="btn btnApoio col-5" type="submit" name="option" value="updateForm">Atualizar</button>
-							    </div>
-							  </td>
+                              
+                            
 
                                
                             </form>
