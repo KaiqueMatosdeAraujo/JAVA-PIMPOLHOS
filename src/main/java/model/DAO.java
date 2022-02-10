@@ -13,33 +13,33 @@ public class DAO {
 		
 	}
 	
-	//                                           CLIENTE
+	///////////////////////////////////////////////////////////CLIENTE//////////////////////////////////////////
 	
-	public void inserir (Usuario usuario) {
-		Conexao c = Conexao.getInstance();
-		Connection con = c.getConnection();
+	//public void inserirUsuario (Usuario usuario) {
+		//Conexao c = Conexao.getInstance();
+		//Connection con = c.getConnection();
 		
-		try {
-			PreparedStatement p = con.prepareStatement("insert into cliente (nome_cliente, cpf, data_nasc,email,senha) VALUES (?,?,?,?,?)");
-			p.setString(1, usuario.getNome());
-		    p.setString(2, usuario.getCpf());
-			p.setDate(3,(Date) usuario.getNascimento());
-			p.setString(4, usuario.getEmail());
-		    p.setString(5, usuario.getSenha());
+		//try {
+		//	PreparedStatement p = con.prepareStatement("insert into cliente (nome_cliente, cpf, data_nasc,email,senha) VALUES (?,?,?,?,?)");
+		//	p.setString(1, usuario.getNome());
+		 //   p.setString(2, usuario.getCpf());
+		//	p.setDate(3,(Date) usuario.getNascimento());
+		//	p.setString(4, usuario.getEmail());
+		  //  p.setString(5, usuario.getSenha());
 			
-			System.out.println(p);
-			p.executeUpdate();
-			System.out.println("Comando executado");
-			p.close();
-			con.close();
-		} catch (SQLException e) {
+			//System.out.println(p);
+			//p.executeUpdate();
+			//System.out.println("Comando executado");
+			//p.close();
+			//con.close();
+		//} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			//e.printStackTrace();
+		//}
 		
-	}
+	//}
 	
-	public ArrayList<Usuario> exibir(){
+	public ArrayList<Usuario> exibirUsuarios(){
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
 		ArrayList<Usuario> lista = new ArrayList<Usuario>();
@@ -68,53 +68,54 @@ public class DAO {
 		return lista;
 	}
 	
-	public void deletar(Integer id) {
-		Conexao c = Conexao.getInstance();
-		Connection con = c.getConnection();
+	//public void deletarUsuario(Integer id) {
+		//Conexao c = Conexao.getInstance();
+		//Connection con = c.getConnection();
 		
-		try {
-			PreparedStatement a = con.prepareStatement("delete from endereco_cliente where cod_cliente = ?");
-		    a.setInt(1, id);
-		    System.out.println(a);
-		    a.executeUpdate();
-		    System.out.println("Comando executado");
+		//try {
+			//PreparedStatement a = con.prepareStatement("delete from endereco_cliente where cod_cliente = ?");
+		   // a.setInt(1, id);
+		   // System.out.println(a);
+		    //a.executeUpdate();
+		    //System.out.println("Comando executado");
 		    
-			PreparedStatement p = con.prepareStatement("delete from cliente where cod_cliente = ?");
-			p.setInt(1, id);
-			System.out.println(p);
-			p.executeUpdate();
-			System.out.println("Comando executado");
-			p.close();
-			con.close();
-		} catch (SQLException e) {
+			//PreparedStatement p = con.prepareStatement("delete from cliente where cod_cliente = ?");
+			//p.setInt(1, id);
+			//System.out.println(p);
+			//p.executeUpdate();
+			//System.out.println("Comando executado");
+			//p.close();
+			//con.close();
+		//} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+			//e.printStackTrace();
+		//}
+	//}
 	
 	
-	public void atualizar(Usuario usuario) {
-		Conexao c = Conexao.getInstance();
-		Connection con = c.getConnection();
+	//public void atualizarUsuario(Usuario usuario) {
+		//Conexao c = Conexao.getInstance();
+		//Connection con = c.getConnection();
 		
-		try {
-			PreparedStatement p = con.prepareStatement("update cliente set nome_cliente = ? , cpf = ?, data_nasc = ?,email = ?, senha = ?  where cod_cliente = ? ");
-			p.setString(1, usuario.getNome());
-			p.setString(2, usuario.getCpf());
-		    p.setDate(3, (Date) usuario.getNascimento());
-			p.setString(4, usuario.getEmail());
-			p.setString(5, usuario.getSenha());
-			p.setInt(6, usuario.getCod_cliente());
-			System.out.println(p);
-			p.executeUpdate();
-			System.out.println("Comando executado");
-			p.close();
-			con.close();
-		} catch (SQLException e) {
+		//try {
+			//PreparedStatement p = con.prepareStatement("update cliente set nome_cliente = ? , cpf = ?, data_nasc = ?,email = ?, senha = ?  where cod_cliente = ? ");
+			//p.setString(1, usuario.getNome());
+			//p.setString(2, usuario.getCpf());
+		    //p.setDate(3, (Date) usuario.getNascimento());
+			//p.setString(4, usuario.getEmail());
+			//p.setString(5, usuario.getSenha());
+			//p.setInt(6, usuario.getCod_cliente());
+			//System.out.println(p);
+			//p.executeUpdate();
+			//System.out.println("Comando executado");
+			//p.close();
+			//con.close();
+		//} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+			//e.printStackTrace();
+		//}
+	//}
+	
 	public Usuario recuperarUsuario (Integer id) {	
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
