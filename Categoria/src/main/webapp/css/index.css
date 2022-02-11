@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+td{
+    background-color: white !important;
+}
+
+.btnAcoes button{
+	background-color: transparent; 
+	margin-left: 10px;
+	border: none;
+	text-decoration: underline;
+	margin-left: 25px;
+}
+
+.navLateral{
+    margin-top:10px;
+    background-color:#E6889A;
+    border-radius:8px;
+    justify-content: center;
+}
+
+hr {
+   color:rgb(255, 255, 255) !important;
+}
+
+ul.menuLateralTab  li a{
+    font-weight:bold;
+    color:white;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+ul.menuLateralTab :hover {
+    color: rgb(179, 179, 179);
+    font-size: 17px;
+    text-align: center;
+}
+
+
+
+.menuLateralTab li a:hover{
+    color: rgb(99, 99, 99);
+}
+
+ul .menuLateralTab  li a:visited{
+    color: white;
+}
+
+.navbar{
+    margin-bottom: 50px;
+    background-color:#E6889A;
+}
+
+.navbar-light a.navbar-brand{
+    color:#ffffff;
+    /* font-weight: bold; */
+}
+
+.navbar-light a.navbar-brand:hover{
+    color:#ffffff;
+}
+
+.navbar-light a.navbar-brand:visited{
+    color:#ffffff;
+}
+
+table{
+    background-color: rgb(255, 251, 251);
+    Color: rgb(0, 0, 0);
+}
+
+tbody{
+    background-color: rgb(226, 226, 226);
+}
+
+.conteudo{
+    background-color: rgb(255 255 255);
+    border: 3px solid rgb(226 222 222);
+    border-radius: 10px;
+}
+
+select{
+    width: 250px;
+    height: 38px;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+
+}
+
+.btnSalvar {
+    margin: 10px 0px 10px 420px;
+}
+
+
+
+
+.clientes::before{
+    content: "";
+    background-image: url("imgs/user\ \(1\).png");
+    background-size: 26px;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+}
+
+.categorias::before{
+    content: "";
+    background-image: url("imgs/categories.png");
+    background-size: 26px;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+}
+
+.produtos::before{
+    content: "";
+    background-image: url("imgs/produto.png");
+    background-size: 26px;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+}
+
+.fornecedores::before{
+    content: "";
+    background-image: url("imgs/fornecedor.png");
+    background-size: 26px;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+}
+
+.pedidos::before{
+    content: "";
+    background-image: url("imgs/pedido.png");
+    background-size: 26px;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+}
+
+.title-marca{
+    margin-bottom: 3rem;
+}
+
+.input-marca input{
+    margin-bottom: 40px;
+    width: 200px;
+}
+
+.marcas::before{
+    content: "";
+    background-image: url("imgs/etiqueta.png");
+    background-size: 26px;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+}
+
+.container input {
+	width: 100%;
+}
+
+@media (min-width: 990px) {
+    .navHamb{
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .navLateral{
+        display: none;
+    }
+
+    .conteudo{
+        margin-left: 24px;
+    }
+   
+}
